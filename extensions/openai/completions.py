@@ -287,8 +287,8 @@ def chat_completions_common(body: dict, is_legacy: bool = False, stream=False, p
 
     max_tokens = generate_params['max_new_tokens']
     if max_tokens in [None, 0]:
-        generate_params['max_new_tokens'] = 512
-        generate_params['auto_max_new_tokens'] = True
+        generate_params['max_new_tokens'] = 4096
+        generate_params['auto_max_new_tokens'] = False
 
     requested_model = generate_params.pop('model')
     logprob_proc = generate_params.pop('logprob_proc', None)
