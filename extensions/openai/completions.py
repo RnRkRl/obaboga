@@ -90,7 +90,7 @@ def process_parameters(body, is_legacy=False):
     max_tokens_str = 'length' if is_legacy else 'max_tokens'
     generate_params['max_new_tokens'] = body.pop(max_tokens_str)
     if generate_params['truncation_length'] == 0:
-        generate_params['truncation_length'] = shared.settings['truncation_length']
+        generate_params['truncation_length'] = 4096
 
     if generate_params['temperature'] == 0:
         generate_params['do_sample'] = False
